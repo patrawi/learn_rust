@@ -1,3 +1,4 @@
 /rust/*/target/
 /rust/*/target/debug/
 /rust/*/target/release/
+target/
