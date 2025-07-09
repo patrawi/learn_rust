@@ -16,6 +16,7 @@ fn main() {
         let command = get_command();
 
         if command.trim() == "exit" {
+            // The reason that we have to trim is because when we enter a command with leading or trailing whitespace, the comparison will fail.
             println!("Exiiting inventory tracker");
             break;
         }
