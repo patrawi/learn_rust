@@ -5,3 +5,4 @@ gist 9 : Struct, derive, Debug
 gist 10: Enum, Derive, Clone, and Partial
 gist 11: Impl,  Derive, Display, Strum, FromStr, EnumString, Enums Variants
 gist 12: Enum Variants
+gist 13: Trait, Impl, Generic, Trait Bound, Trait Object, Sized
