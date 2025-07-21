@@ -74,6 +74,7 @@ fn main() {
     // When creating animals, pass the enum variants like `AnimalType::Duck`.
     let animal = Animal::new("foo", 42u8, AnimalType::Duck);
     println!("animal: {:#?}", animal);
+    let mut test = "Cat";
 
     // Call say via static method.
     // This should now use the enum variant.
