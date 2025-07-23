@@ -64,14 +64,14 @@ async fn main() {
 
     println!("Start time for concurrent eating");
     let eat_start_time = SystemTime::now();
-    let cat_eat_handle = spawn(async move {
-        Cat {}.eat("fish".to_string()).await;
-    });
-    let dog_eat_handle = spawn(async move {
-        Dog {}.eat("meat".to_string()).await;
-    });
-    cat_eat_handle.await.expect("Cat eats task panicked");
-    dog_eat_handle.await.expect("Dog eats task panicked");
+    let cat_eat_handle = spawn(async move { Cat {}.eat("fish".to_string()).await });
+    let dog_eat_handle = spawn(async move { Dog {}.eat("meat".to_string()).await });
+
+    let cat_eat_result = cat_eat_handle.await.expect("Cat eats task panicked");
+    let dog_eat_result = dog_eat_handle.await.expect("Cat eats task panicked");
+    println!("Cat says: {}", cat_eat_result);
+    println!("Dog says: {}", dog_eat_result);
+
     let eat_elasped_time = eat_start_time.elapsed().ok().unwrap().as_secs();
     println!(
         "Total time for concurrent eating: {} seconds.",
@@ -80,22 +80,20 @@ async fn main() {
 
     println!("Start time for animal making sound");
     let sound_start_time = SystemTime::now();
-    let cat_make_sound_handle = spawn(async move {
-        Cat {}.make_sound().await;
-    });
+    let cat_make_sound_handle = spawn(async move { Cat {}.make_sound().await });
 
-    let dog_make_sound_handle = spawn(async move {
-        Dog {}.make_sound().await;
-    });
+    let dog_make_sound_handle = spawn(async move { Dog {}.make_sound().await });
 
-    cat_make_sound_handle
+    let cat_make_sound_result = cat_make_sound_handle
         .await
         .expect("Cat makes sound task panicked");
 
-    dog_make_sound_handle
+    let dog_make_sound_result = dog_make_sound_handle
         .await
         .expect("Dog makes sound task panicked");
     let make_sound_elapsed_time = sound_start_time.elapsed().ok().unwrap().as_micros();
+    println!("Cat says: {}", cat_make_sound_result);
+    println!("Dog says: {}", dog_make_sound_result);
     println!(
         "Total time for animal making sound: {} microseconds.",
         make_sound_elapsed_time
