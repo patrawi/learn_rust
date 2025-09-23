@@ -12,3 +12,4 @@ gist 16: PhantomData, State, Store Data in a State, Transition
 gist 17: Generic, Trait Bound, Trait Object
 gist 18: Generic, Trait Bound, Trait Object, Generic, Trait Bound, Trait Object
 gist 19: Parameterized, Where Clause, Trait Bound
+gist 21: Serde, Serde_JSON, URL, Serialize, Deserialize

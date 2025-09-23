@@ -1,0 +1,13 @@
+[
+  {
+    "id": "foo",
+    "animalType": "Cat",
+    "imgUrl": "http://localhost:3000/assets/kat.png",
+    "description": "A fluffy cat."
+  },
+  {
+    "id": "bar",
+    "animalType": "Duck",
+    "imgUrl": "http://localhost:3000/assets/duck.png"
+  }
+]
